@@ -1,5 +1,10 @@
+import CpuUsageChart from "@/features/dashboard/CpuUsageChart";
+
 export default function Settings() {
     return (
-        <h1>Settings</h1>
+        <div>
+            <h1>Settings</h1>
+            {/* <CpuUsageChart /> */}
+        </div>
     )
 }

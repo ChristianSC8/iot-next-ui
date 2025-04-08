@@ -78,12 +78,12 @@ export function Sidebar({ isCollapsed, toggleSidebar }: SidebarProps) {
               </button>
               <span
                 className={cx(
-                  "text-sm font-semibold text-gray-900 transition-opacity dark:text-gray-50",
+                  "text-md font-semibold text-gray-900 transition-opacity dark:text-gray-50",
                   isCollapsed ? "opacity-0" : "opacity-100",
                 )}
               >
                 <a aria-label="Home Link" href="/dashboard">
-                  Iot
+                  Iot Project
                 </a>
               </span>
             </div>
@@ -117,9 +117,9 @@ export function Sidebar({ isCollapsed, toggleSidebar }: SidebarProps) {
                           href={item.href}
                           className={cx(
                             isActive(item.href)
-                              ? "text-blue-600 dark:text-blue-500"
-                              : "text-gray-700 dark:text-gray-300",
-                            "inline-flex items-center rounded-md p-2 text-sm font-medium transition hover:bg-gray-200/50 hover:dark:bg-gray-900",
+                              ? "text-primary dark:text[#68b89c] border border-primary-br bg-background-subtle dark:bg-background-subtle"
+                              : "text-gray-700 dark:text-gray-300 border border-transparent",
+                            "flex items-center gap-x-2.5 rounded-md p-2 text-sm font-medium transition-opacity hover:bg-background-subtle hover:dark:bg-[#1c1c24] ",
                             focusRing,
                           )}
                         >
@@ -134,9 +134,9 @@ export function Sidebar({ isCollapsed, toggleSidebar }: SidebarProps) {
                         href={item.href}
                         className={cx(
                           isActive(item.href)
-                            ? "text-blue-600 dark:text-blue-500"
-                            : "text-gray-700 dark:text-gray-300",
-                          "flex items-center gap-x-2.5 rounded-md p-2 text-sm font-medium transition-opacity hover:bg-gray-200/50 hover:dark:bg-gray-900",
+                            ? "text-primary dark:text[#68b89c] border border-primary-br bg-background-subtle dark:bg-background-subtle"
+                            : "text-gray-700 dark:text-gray-300 border border-transparent",
+                          "flex items-center gap-x-2.5 rounded-md p-2 text-sm font-medium transition-opacity hover:bg-background-subtle hover:dark:bg-[#1c1c24] ",
                           focusRing,
                         )}
                       >
