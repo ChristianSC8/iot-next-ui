@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 type SensorData = {
   hum: number;
   temp: number;
+  rain: boolean
 };
 
 type UseSensorDataReturn = {
