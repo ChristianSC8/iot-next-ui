@@ -2,7 +2,7 @@ import useSensorData from "./hooks/useGetSensor";
 
 export const HumidityCard = () => {
 
-    const { sensorData, loading, error } = useSensorData(2000);
+    const { sensorData} = useSensorData(2000);
 
     return (
         <div className="h-[240px] w-full rounded-md dark:bg-[#21212B] border border-primary-br px-4 py-6 shadow-md flex flex-col">

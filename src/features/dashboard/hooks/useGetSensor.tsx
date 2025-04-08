@@ -23,8 +23,13 @@ const useSensorData = (interval?: number): UseSensorDataReturn => {
       setSensorData(data);
       console.log(data)
       setError(null);
-    } catch (err) {
-      setError('Failed to fetch data');
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+        setError(err.message);
+        console.error('Error fetching sensor data:', err.message);
+      } else {
+        setError('Unknown error');
+      }
     } finally {
       setLoading(false);
     }

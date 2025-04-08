@@ -1,4 +1,3 @@
-import { ProgressCircle } from "@/components/ProgressCircle"
 import { Badge } from "@/components/ui/Badge"
 
 export const AirQualityCard = () => {
