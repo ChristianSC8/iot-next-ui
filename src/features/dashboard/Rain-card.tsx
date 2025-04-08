@@ -3,7 +3,7 @@ import useSensorData from "./hooks/useGetSensor";
 export const RainCard = () => {
 
     const { sensorData } = useSensorData(2000);
-
+    console.log(sensorData?.rain)
     return (
         <div className="h-[240px] w-full rounded-md dark:bg-[#21212B] border border-primary-br px-4 py-6 shadow-md flex flex-col">
             <div className="w-full flex items-center justify-center mb-8">
@@ -35,7 +35,7 @@ export const RainCard = () => {
                 </div>
             </div>
             <h2 className="mt-9 text-center font-semibold text-2xl">
-                {`${sensorData?.rain === true ? "Yes" : "No"}`}
+                {`Rain - ${sensorData?.rain === true ? "Yes" : "No"}`}
             </h2>
         </div>
     )

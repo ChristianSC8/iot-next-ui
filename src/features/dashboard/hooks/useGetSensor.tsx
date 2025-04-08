@@ -3,7 +3,8 @@ import { useEffect, useState } from 'react';
 type SensorData = {
   hum: number;
   temp: number;
-  rain: boolean
+  rain: boolean;
+  created_at: string;
 };
 
 type UseSensorDataReturn = {
@@ -21,8 +22,14 @@ const useSensorData = (interval?: number): UseSensorDataReturn => {
     try {
       const res = await fetch('https://iot-server-58f2a-default-rtdb.firebaseio.com/sensor.json');
       const data = await res.json();
-      setSensorData(data);
-      console.log(data)
+
+      // Aseguramos que los datos sean tratados como un arreglo de SensorData
+      const sortedData: SensorData[] = Object.values(data) as SensorData[];
+
+      // Solo obtenemos el último dato (más reciente)
+      const lastSensorData = sortedData[sortedData.length - 1] || null;
+
+      setSensorData(lastSensorData);
       setError(null);
     } catch (err: unknown) {
       if (err instanceof Error) {
