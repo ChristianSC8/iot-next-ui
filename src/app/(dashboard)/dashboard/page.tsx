@@ -1,7 +1,5 @@
 "use client"
-import { firebaseConfig } from "@/config/config-db";
 import { AirQualityCard } from "@/features/dashboard/components/Air-quality-card";
-import AirQualityChart from "@/features/dashboard/components/CpuUsageChart";
 import { HumidityCard } from "@/features/dashboard/components/Humidity-card";
 import { RainCard } from "@/features/dashboard/components/Rain-card";
 import { TemperatureCard } from "@/features/dashboard/components/Temperature-card";

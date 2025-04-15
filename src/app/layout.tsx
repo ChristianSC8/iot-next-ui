@@ -1,13 +1,10 @@
 
 
-import { GeistSans } from "geist/font/sans"
 import type { Metadata } from "next"
-import { NuqsAdapter } from "nuqs/adapters/next/app"
 import React from "react"
 import "./globals.css"
 import { siteConfig } from "./siteConfig"
 import { ThemeProvider } from "../components/layout/Theme-provider"
-import ThemeDropdown from "@/components/layout/ThemeDropdown"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://yoururl.com"),
