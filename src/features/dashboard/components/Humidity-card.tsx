@@ -24,7 +24,7 @@ export const HumidityCard = () => {
                     Humidity
                 </div>
             </div>
-            <h2 className="mt-9 text-center font-semibold text-2xl">{sensorData?.hum !== undefined ? `${sensorData.hum}%` : '00%'}
+            <h2 className="mt-9 text-center font-semibold text-2xl">{sensorData?.humidity !== undefined ? `${sensorData.humidity}%` : '00%'}
             </h2>
         </div>
     )

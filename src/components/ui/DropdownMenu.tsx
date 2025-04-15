@@ -75,7 +75,7 @@ const DropdownMenuSubMenuContent = React.forwardRef<
         // heights
         "max-h-[var(--radix-popper-available-height)]",
         // background color
-        "bg-white dark:bg-[#090E1A]",
+        "bg-white dark:bg-background",
         // text color
         "text-gray-900 dark:text-gray-50",
         // border color
@@ -119,7 +119,7 @@ const DropdownMenuContent = React.forwardRef<
           // heights
           "max-h-[var(--radix-popper-available-height)]",
           // background color
-          "bg-white dark:bg-[#090E1A]",
+          "bg-white dark:bg-background",
           // text color
           "text-gray-900 dark:text-gray-50",
           // border color
@@ -160,7 +160,7 @@ const DropdownMenuItem = React.forwardRef<
       // focus
       "focus-visible:bg-gray-100 focus-visible:dark:bg-gray-900",
       // hover
-      "hover:bg-gray-100 hover:dark:bg-gray-900",
+      "hover:bg-gray-100 dark:hover:bg-red-900",
       className,
     )}
     tremor-id="tremor-raw"

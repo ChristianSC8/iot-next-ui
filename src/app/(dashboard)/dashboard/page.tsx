@@ -5,6 +5,7 @@ import AirQualityChart from "@/features/dashboard/components/CpuUsageChart";
 import { HumidityCard } from "@/features/dashboard/components/Humidity-card";
 import { RainCard } from "@/features/dashboard/components/Rain-card";
 import { TemperatureCard } from "@/features/dashboard/components/Temperature-card";
+import { getLastAirQuality } from "@/features/dashboard/services/get-air-quality";
 import { getLastRainData } from "@/features/dashboard/services/get-rain-data";
 import { ResponseData } from "@/types/Response-data";
 import { useEffect, useState } from "react";
@@ -13,10 +14,17 @@ import { useEffect, useState } from "react";
 export default function Dashboard() {
 
   const [lastRain, setLastRain] = useState<ResponseData | null>(null);
+  const [lastAirQuality, setLastAirQuality] = useState<ResponseData | null>(null);
 
   useEffect(() => {
     getLastRainData((data) => {
       setLastRain(data);
+    });
+  }, []);
+
+  useEffect(() => {
+    getLastAirQuality((data) => {
+      setLastAirQuality(data);
     });
   }, []);
 
@@ -33,7 +41,7 @@ export default function Dashboard() {
           <RainCard data={lastRain} />
         </div>
         <div className="lg:col-span-3">
-          <AirQualityCard />
+          <AirQualityCard data={lastAirQuality}/>
         </div>
       </div>
 
@@ -42,7 +50,7 @@ export default function Dashboard() {
           <div className="col-span-6 bg-white dark:bg-[#2A2A39] rounded">
           </div>
           <div className="col-span-3 bg-white dark:bg-[#2A2A39] rounded">
-
+          
           </div>
         </div>
       </div>

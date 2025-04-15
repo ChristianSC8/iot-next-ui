@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 
 type SensorData = {
-  hum: number;
-  temp: number;
+  humidity: number;
+  temperature: number;
   rain: boolean;
   created_at: string;
 };

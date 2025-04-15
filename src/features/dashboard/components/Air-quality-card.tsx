@@ -1,14 +1,31 @@
 import { Badge } from "@/components/ui/Badge"
+import { ResponseData } from "@/types/Response-data";
 
-export const AirQualityCard = () => {
+interface RainCardProps {
+    data: ResponseData | null;
+}
+
+const CO_THRESHOLD = 50;
+
+export const AirQualityCard: React.FC<RainCardProps> = ({ data }) => {
+
+    const getAirQualityStatus = () => {
+        if (!data) return "Unknown";
+
+        const coLevel = data.carbon_monoxide_ppm;
+
+        return coLevel <= CO_THRESHOLD ? "Good" : "Bad";
+    };
+
+
     return (
         <div className="dark:bg-[#21212B] px-4 py-4 rounded lg:h-[240px]  flex flex-col border border-primary-br">
             {/* Parte superior: título, badge e ícono */}
             <div className="flex justify-between items-start flex-none">
                 <div className="text-xl font-medium text-gray-900 dark:text-gray-50 flex flex-col">
                     <span >Air Quality</span>
-                    <Badge variant="success" className="flex items-center justify-center mt-1 ">
-                        Good
+                    <Badge variant="warning" className="flex items-center justify-center mt-1 ">
+                        {getAirQualityStatus()}
                     </Badge>
                 </div>
                 <div className="flex items-center justify-end">
@@ -28,19 +45,19 @@ export const AirQualityCard = () => {
             {/* Parte inferior que ocupa el resto */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full mt-5 flex-1 border-primary-br">
                 <div className="bg-[#f9fafb] dark:bg-background-subtle border border-primary-br rounded-md p-2 h-full dark:border-primary-br flex flex-col items-center justify-center gap-1">
-                    <span className="text-md text-gray-500 dark:text-[#C498FA]">PM2.5</span>
-                    <span className="text-xl font-semibold text-gray-900 dark:text-white">00.00</span>
+                    <span className="text-md text-gray-500 dark:text-[#C498FA]">CO</span>
+                    <span className="text-xl font-semibold text-gray-900 dark:text-white">{data?.carbon_monoxide_mq7 ?? 'N/A'}</span>
                     <span className="text-xs text-gray-500 dark:text-gray-400">ug/m³</span>
                 </div>
                 <div className="bg-[#f9fafb] dark:bg-background-subtle border border-primary-br rounded-md p-2 h-full dark:border-primary-br flex flex-col items-center justify-center gap-1">
                     <span className="text-md text-gray-500 dark:text-[#C498FA]">CO₂</span>
-                    <span className="text-xl font-semibold text-gray-900 dark:text-white">000</span>
+                    <span className="text-xl font-semibold text-gray-900 dark:text-white">{data?.carbon_dioxide_ppm ?? 'N/A'}</span>
                     <span className="text-xs text-gray-500 dark:text-gray-400">ppm</span>
                 </div>
 
                 <div className="bg-[#f9fafb] dark:bg-background-subtle border border-primary-br rounded-md p-2 h-full dark:border-primary-br flex flex-col items-center justify-center gap-1">
                     <span className="text-md text-gray-500 dark:text-[#C498FA]">NH₃</span>
-                    <span className="text-xl font-semibold text-gray-900 dark:text-white">0.0</span>
+                    <span className="text-xl font-semibold text-gray-900 dark:text-white">{data?.amonia_ppm ?? 'N/A'}</span>
                     <span className="text-xs text-gray-500 dark:text-gray-400">ppm</span>
                 </div>
             </div>

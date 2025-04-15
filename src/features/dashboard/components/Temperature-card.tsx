@@ -26,7 +26,7 @@ export const TemperatureCard = () => {
                     Temperature
                 </div>
             </div>
-            <h2 className="mt-9 text-center font-semibold text-2xl">{sensorData?.temp ? `${sensorData.temp}°C` : '00°C'}
+            <h2 className="mt-9 text-center font-semibold text-2xl">{sensorData?.temperature ? `${sensorData.temperature}°C` : '00°C'}
             </h2>
         </div>
     )
