@@ -46,8 +46,8 @@ export const AirQualityCard: React.FC<RainCardProps> = ({ data }) => {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full mt-5 flex-1 border-primary-br">
                 <div className="bg-[#f9fafb] dark:bg-background-subtle border border-primary-br rounded-md p-2 h-full dark:border-primary-br flex flex-col items-center justify-center gap-1">
                     <span className="text-md text-gray-500 dark:text-[#C498FA]">CO</span>
-                    <span className="text-xl font-semibold text-gray-900 dark:text-white">{data?.carbon_monoxide_mq7 ?? 'N/A'}</span>
-                    <span className="text-xs text-gray-500 dark:text-gray-400">ug/m³</span>
+                    <span className="text-xl font-semibold text-gray-900 dark:text-white">{data?.carbon_monoxide_ppm ?? 'N/A'}</span>
+                    <span className="text-xs text-gray-500 dark:text-gray-400">ppm</span>
                 </div>
                 <div className="bg-[#f9fafb] dark:bg-background-subtle border border-primary-br rounded-md p-2 h-full dark:border-primary-br flex flex-col items-center justify-center gap-1">
                     <span className="text-md text-gray-500 dark:text-[#C498FA]">CO₂</span>
