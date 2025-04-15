@@ -1,11 +1,11 @@
-import useSensorData from "./hooks/useGetSensor";
+import useSensorData from "../hooks/useGetSensor";
 
 export const TemperatureCard = () => {
 
     const { sensorData } = useSensorData(2000);
 
     return (
-        <div className="h-[240px] w-full rounded-md dark:bg-[#21212B] border border-primary-br px-4 py-6 shadow-md flex flex-col">
+        <div className="h-[240px] w-full rounded-md dark:bg-[#21212B] border border-primary-br px-4 py-6 flex flex-col">
             <div className="w-full flex items-center justify-center mb-8">
                 <svg className="w-[100px] h-[90px] fill-primary" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
                     <path d="m281.12 353.35v-311.13c0-23.28-18.94-42.221-42.221-42.221-23.282 0-42.221 18.941-42.221 42.221v311.13c-26.391 15.093-42.646 42.761-42.756 73.36-0.078 21.959 8.481 42.96 24.097 59.132 15.624 16.179 36.315 25.453 58.26 26.115 0.886 0.026 1.767 0.04 2.649 0.04 22.227-1e-3 43.14-8.461 59.142-23.987 16.642-16.149 25.806-37.809 25.806-60.992-1e-3 -30.731-16.257-58.517-42.756-73.668zm5.785 123.15c-13.496 13.095-31.316 20.003-50.142 19.427-17.741-0.534-34.507-8.072-47.21-21.226-12.701-13.152-19.661-30.176-19.597-47.937 0.093-26.181 14.773-49.723 38.31-61.438 2.724-1.355 4.444-4.136 4.444-7.177v-315.93c0-14.44 11.748-26.188 26.188-26.188s26.188 11.748 26.188 26.188v315.94c0 3.042 1.721 5.821 4.444 7.177 23.632 11.762 38.311 35.4 38.311 61.689 1e-3 18.809-7.434 36.383-20.936 49.484z" />

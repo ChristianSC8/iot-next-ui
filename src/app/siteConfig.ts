@@ -7,6 +7,7 @@ export const siteConfig = {
     devices: "/devices",
     settings: "/settings",
     alerts: "/alerts",
+    reports: "/reports",
   }
 }
 

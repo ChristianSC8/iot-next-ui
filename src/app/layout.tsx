@@ -1,10 +1,13 @@
+
+
 import { GeistSans } from "geist/font/sans"
 import type { Metadata } from "next"
-import { ThemeProvider } from "next-themes"
 import { NuqsAdapter } from "nuqs/adapters/next/app"
 import React from "react"
 import "./globals.css"
 import { siteConfig } from "./siteConfig"
+import { ThemeProvider } from "../components/layout/Theme-provider"
+import ThemeDropdown from "@/components/layout/ThemeDropdown"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://yoururl.com"),
@@ -38,19 +41,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${GeistSans.className} overflow-hidden bg-gray-50 antialiased selection:bg-blue-100 selection:text-primary dark:bg-gray-950`}
-      >
+      <body className="bg-background dark:bg-background text-[#37352f] dark:text-[#ffffffcf]">
         <ThemeProvider
-          defaultTheme="system"
-          disableTransitionOnChange
           attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
         >
-          <NuqsAdapter>
-            <div>{children}</div>
-          </NuqsAdapter>
+          {children}
         </ThemeProvider>
       </body>
     </html>
-  )
+  );
 }
+
+
+

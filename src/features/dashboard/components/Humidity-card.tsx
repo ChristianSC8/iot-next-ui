@@ -1,11 +1,11 @@
-import useSensorData from "./hooks/useGetSensor";
+import useSensorData from "../hooks/useGetSensor";
 
 export const HumidityCard = () => {
 
     const { sensorData} = useSensorData(2000);
 
     return (
-        <div className="h-[240px] w-full rounded-md dark:bg-[#21212B] border border-primary-br px-4 py-6 shadow-md flex flex-col">
+        <div className="h-[240px] w-full rounded-md dark:bg-[#21212B] border border-primary-br px-4 py-6 flex flex-col">
             <div className="w-full flex items-center justify-center mb-8">
                 <svg className="w-[100px] h-[90px] fill-[#3AA8B5]" viewBox="0 0 364 406" xmlns="http://www.w3.org/2000/svg">
                     <path d="m305.22 229.79c-16.762-102.67-141.08-222.8-146.67-227.69-2.793-2.7937-6.984-2.7937-9.778 0-6.286 5.5875-148.77 142.48-148.77 249.34 0 84.51 69.145 153.66 153.66 153.66 23.747 0 46.796-5.588 67.749-16.064 14.667 9.778 32.128 16.064 50.986 16.064 50.287 0 90.797-40.51 90.797-90.797 0-38.414-23.747-71.241-57.971-84.511zm-151.56 161.34c-76.828 0-139.69-62.859-139.69-139.69 0-90.099 114.54-209.53 139.69-234.68 23.049 23.048 118.74 122.92 136.89 208.83-6.286-1.397-11.873-2.095-18.159-2.095-50.288 0-90.797 40.509-90.797 90.797 0 25.842 10.476 48.89 27.937 64.955-17.461 7.682-36.319 11.873-55.875 11.873zm118.74 0c-42.605 0-76.829-34.223-76.829-76.828s34.224-76.828 76.829-76.828c42.604 0 76.828 34.223 76.828 76.828s-34.224 76.828-76.828 76.828z" />

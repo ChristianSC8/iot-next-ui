@@ -4,6 +4,7 @@ import { Tooltip } from "@/components/ui/Tooltip"
 import { cx, focusRing } from "@/utils/utils"
 import {
   AlertTriangle,
+  FileBarChart,
   PanelRightClose,
   PanelRightOpen,
   Server,
@@ -35,6 +36,11 @@ const navigation = [
     href: siteConfig.baseLinks.settings,
     icon: Settings2,
   },
+  {
+    name: "Reports",
+    href: siteConfig.baseLinks.reports,
+    icon: FileBarChart,
+  },
 ] as const
 
 interface SidebarProps {
@@ -61,6 +67,7 @@ export function Sidebar({ isCollapsed, toggleSidebar }: SidebarProps) {
           <div>
             <div className="flex items-center gap-x-1.5">
               <button
+                aria-label="colapsed-button"
                 className="group inline-flex rounded-md p-2 hover:bg-gray-200/50 hover:dark:bg-gray-900"
                 onClick={toggleSidebar}
               >

@@ -2,15 +2,15 @@ import { Badge } from "@/components/ui/Badge"
 
 export const AirQualityCard = () => {
     return (
-        <div className="dark:bg-[#21212B] px-4 py-4 shadow-md rounded lg:h-[240px]  flex flex-col border border-primary-br">
+        <div className="dark:bg-[#21212B] px-4 py-4 rounded lg:h-[240px]  flex flex-col border border-primary-br">
             {/* Parte superior: título, badge e ícono */}
             <div className="flex justify-between items-start flex-none">
-                <dt className="text-xl font-medium text-gray-900 dark:text-gray-50 flex flex-col">
-                    <span>Air Quality</span>
+                <div className="text-xl font-medium text-gray-900 dark:text-gray-50 flex flex-col">
+                    <span >Air Quality</span>
                     <Badge variant="success" className="flex items-center justify-center mt-1 ">
                         Good
                     </Badge>
-                </dt>
+                </div>
                 <div className="flex items-center justify-end">
                     <svg className="w-[70px] h-[70px] fill-[#3AA8B5]" viewBox="0 0 367.3 367.3" xmlns="http://www.w3.org/2000/svg">
                         <path d="m241.54 156.52c-1.919 0-3.837-0.731-5.302-2.195-14.048-14.038-32.722-21.769-52.582-21.769-4.143 0-7.5-3.358-7.5-7.5s3.357-7.5 7.5-7.5c23.864 0 46.305 9.29 63.186 26.159 2.93 2.928 2.932 7.677 4e-3 10.606-1.465 1.466-3.386 2.199-5.306 2.199z" />

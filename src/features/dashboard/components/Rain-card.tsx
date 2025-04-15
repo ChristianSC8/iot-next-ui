@@ -1,14 +1,18 @@
-import useSensorData from "./hooks/useGetSensor";
+import { ResponseData } from "@/types/Response-data";
 
-export const RainCard = () => {
+interface RainCardProps {
+    data: ResponseData | null;
+}
 
-    const { sensorData } = useSensorData(2000);
-    console.log(sensorData?.rain)
+export const RainCard: React.FC<RainCardProps> = ({ data }) => {
+
+    const isRaining = data?.rain === true;
+
     return (
-        <div className="h-[240px] w-full rounded-md dark:bg-[#21212B] border border-primary-br px-4 py-6 shadow-md flex flex-col">
+        <div className="h-[240px] w-full rounded-md dark:bg-[#21212B] border border-primary-br px-4 py-6 flex flex-col">
             <div className="w-full flex items-center justify-center mb-8">
 
-                {sensorData?.rain ? (
+                {isRaining ? (
                     <svg className="w-[100px] h-[90px] fill-[#3AA8B5]" version="1.1" viewBox="0 0 489 489" xmlns="http://www.w3.org/2000/svg">
                         <g transform="translate(0 -540.36)">
                             <path d="m163.4 897.91c-3.3 0.1-6.4 1.7-8.2 4.4-5.1 7.4-21.6 32.6-21.6 46.1 0 16.9 13.4 30.6 29.8 30.6 16.9 0 30.6-13.8 30.6-30.6 0-13.6-17.1-38.9-22.4-46.3-1.8-2.7-4.9-4.2-8.2-4.2zm0 61c-5.3 0-9.8-4.8-9.8-10.6 0-3.1 4.2-12.1 10-22 6 9.9 10.4 18.9 10.4 22 0 5.9-4.7 10.6-10.6 10.6z" />
@@ -35,7 +39,7 @@ export const RainCard = () => {
                 </div>
             </div>
             <h2 className="mt-9 text-center font-semibold text-2xl">
-                {`Rain - ${sensorData?.rain === true ? "Yes" : "No"}`}
+                {`Rain - ${isRaining ? "Yes" : "No"}`}
             </h2>
         </div>
     )
